@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Ejecuta Maven para limpiar y compilar el proyecto, generando el .jar (sin tests)
-RUN mvn clean package -DskipTests
+RUN ./mvnw clean package -DskipTests
 
 # Etapa de ejecución: usar solo JRE para correr la aplicación en producción
 FROM eclipse-temurin:17-jre
